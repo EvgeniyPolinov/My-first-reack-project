@@ -1,0 +1,13 @@
+.header{
+    display: grid;
+    grid-template-areas:
+    "img"
+    "img";
+    grid-area: header;
+    background-color: gray;
+  }
+
+.logo{
+    height: 90px;
+    grid-area: img;
+}
