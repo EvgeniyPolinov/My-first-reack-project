@@ -5,12 +5,12 @@
   "nav conten";
   grid-template-rows: 10vh 90vh;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+  grid-gap: 5px;
 }
 
 
-.conten {
+.content {
   grid-area: conten;
-  background-color: blueviolet;
+  background-color: rgb(193, 193, 194);
 }
 

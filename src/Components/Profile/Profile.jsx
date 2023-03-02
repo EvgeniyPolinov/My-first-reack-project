@@ -1,12 +1,13 @@
 import g from'./Profile.module.css';
+import MyPosts from './MyPosts/MyPosts';
 
 
 const Profile = () => {
     return (
-        <div className='conten'>
+        <div>
             <div className={g.img}>Типо моя фотка</div>
             <div className={g.info}>Типо мои новости</div>
-            <div className={g.footer}>Типо мои друзья</div>
+            <MyPosts />
         </div>
     )
 }
