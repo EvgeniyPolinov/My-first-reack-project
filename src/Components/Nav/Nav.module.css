@@ -13,4 +13,15 @@
     display: block;
     text-decoration: none;
     color: white;
+    margin-bottom: .7rem;
+}
+.item:hover{
+    text-shadow:-1px -1px white;
+}
+
+.active{
+    display: block;
+    color: gold;
+    text-decoration: none;
+    margin-bottom: .7rem;
 }

@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import classes from './Nav.module.css'
+
 
 
 const Nav = () => {
@@ -6,13 +8,13 @@ const Nav = () => {
         <nav className={classes.nav}>
             <div className={classes.navConteiner}>
                 <div className={classes.gap40px}></div>
-                <a className={classes.item} href='/profile'>Гланвая</a>
-                <a className={classes.item} href='/dialogs'>Сообщения</a>
-                <a className={classes.item} href='#'>Музыка</a>
-                <a className={classes.item} href='#'>Новости</a>
+                <NavLink className = { navData => navData.isActive ? classes.active : classes.item } to='/profile'>Гланвая</NavLink>
+                <NavLink className = { navData => navData.isActive ? classes.active : classes.item } to='/dialogs'>Сообщения</NavLink>
+                <NavLink className = { navData => navData.isActive ? classes.active : classes.item } to='/friends'>Кореша</NavLink>
+                <NavLink className = { navData => navData.isActive ? classes.active : classes.item } to='/novosti'>Новости</NavLink>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Nav;
