@@ -3,6 +3,19 @@ import Post from './Post/Post';
 
 
 const MyPosts = (props) => {
+
+
+    let postData = [
+        {id: 1, message: 'Hi, how are you', likesCount: 12},
+        {id: 2, message:"It`s my first post", likesCount: 32},
+        {id: 3, message:'Hi bro', likesCount: 32}
+    ]
+
+    let postElemens = postData.map( post => <Post message={post.message} likesCount={post.likesCount}/>);
+    
+
+    
+
     return (
         <div className={g.PostsConteiner}>
             My Posts
@@ -12,8 +25,7 @@ const MyPosts = (props) => {
                 <button>Remove</button>
             </div>
             <div className={g.item}>
-                <Post message='Hi, how are you'/>
-                <Post message="It`s my first post"/>
+                {postElemens}
             </div>
         </div>
     );

@@ -1,4 +1,9 @@
 .img {
     width: 50px;
     border-radius: 100px;
+    margin-right: 1rem;
+}
+.item{
+    display: flex;
+    align-items: center;
 }
