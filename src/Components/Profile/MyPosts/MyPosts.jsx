@@ -1,28 +1,30 @@
 import g from'./MyPosts.module.css';
 import Post from './Post/Post';
+import React from 'react'    
 
 
 const MyPosts = (props) => {
 
 
-    let postData = [
-        {id: 1, message: 'Hi, how are you', likesCount: 12},
-        {id: 2, message:"It`s my first post", likesCount: 32},
-        {id: 3, message:'Hi bro', likesCount: 32}
-    ]
-
-    let postElemens = postData.map( post => <Post message={post.message} likesCount={post.likesCount}/>);
+    let postElemens = props.posts.map( post => <Post message={post.message} likesCount={post.likesCount}/>);
     
+    let newPostElement = React.createRef();
 
+    let addPost = () => {
+        props.addPost();
+    }
     
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.changeNewPostText(text);
+    }
 
     return (
         <div className={g.PostsConteiner}>
             My Posts
             <div>
-                <input></input>
-                <button>Add post</button>
-                <button>Remove</button>
+                <input  onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
+                <button onClick={ addPost }>Add post</button>
             </div>
             <div className={g.item}>
                 {postElemens}

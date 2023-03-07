@@ -2,12 +2,12 @@
     display: flex;
 }
 .dialogsItems{
-    width: 20%;
+    width: minmax(10%, 20%);
 }
 
 .messages{
     background-color: rgb(255, 255, 255);
-    width: 80%;
+    width: 90%;
 }
 .active{
     display: block;
