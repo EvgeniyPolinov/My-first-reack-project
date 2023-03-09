@@ -3,7 +3,7 @@
   grid-template-areas:
   "header header"
   "nav conten";
-  grid-template-rows: 10vh 1500px;
+  grid-template-rows: 10vh minmax(100vh, auto);
   grid-template-columns: 2fr 10fr;
   grid-gap: 5px;
 }

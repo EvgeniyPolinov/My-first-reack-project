@@ -4,7 +4,6 @@
 }
 
 .img{
-    height: 75%;
+    height: calc((1vh+1vw)*10);
     margin-left: 5px;
-    margin-top: 12px;
 }

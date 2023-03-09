@@ -3,14 +3,20 @@ import g from './Dialogs.module.css'
 import Dialog from '../Dialogs/Dialog/Dialog'
 import Message from '../Dialogs/Message/Message'
 import React from 'react';
+import { AddMessageActionCreater, UpdateNewMessageActionCreater } from '../../redux/state';
 
 
 const Dialogs = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
+        props.dispatch(AddMessageActionCreater());
+        
+    }
+
+    let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        alert(text)
+        props.dispatch(UpdateNewMessageActionCreater(text))
     }
 
     let dialogElement = props.state.dialogData.map( d => <Dialog name={d.name} id={d.id} />);
@@ -23,8 +29,8 @@ const Dialogs = (props) => {
             </div>
             <div className={g.messages}>
                 {messageElement}
-            <input ref={newMessageElement}></input>
-            <button onClick={ addMessage }>Отправить сообщение</button>
+            <input onChange={onMessageChange} ref={newMessageElement} value={props.newMessageText}></input>
+            <button onClick={addMessage}>Отправить сообщение</button>
             </div>
         </div>
     );

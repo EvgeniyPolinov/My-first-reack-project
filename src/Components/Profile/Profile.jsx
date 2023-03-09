@@ -12,9 +12,8 @@ const Profile = (props) => {
                 <div className={g.profileInfo}>Это информация обо мне и тд и тп</div>
             </div>
             <MyPosts posts={props.profilePage.posts} 
-                    addPost={props.addPost} 
-                    newPostText={props.profilePage.newPostText} 
-                    changeNewPostText={props.changeNewPostText}/>
+                    dispatch={props.dispatch} 
+                    newPostText={props.profilePage.newPostText}/>
         </div>
     )
 }

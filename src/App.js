@@ -19,8 +19,10 @@ const App = (props) => {
         <Nav />
         <div className='content'>
           <Routes>
-            <Route path='/profile/' element={<Profile img="https://img2.freepng.ru/20180628/kxx/kisspng-computer-icons-avatar-operator-5b359bea4195b4.3136422315302399782687.jpg" profilePage={props.state.profilePage} addPost={props.addPost} changeNewPostText={props.changeNewPostText}/>}/>
-            <Route path='/dialogs/*' element={<Dialogs  state={props.state.messagesPage}/>}/>
+            <Route path='/profile/' element={<Profile img="https://img2.freepng.ru/20180628/kxx/kisspng-computer-icons-avatar-operator-5b359bea4195b4.3136422315302399782687.jpg" profilePage={props.state.profilePage}  dispatch={props.dispatch}/>}/>
+            <Route path='/dialogs/*' element={<Dialogs  state={props.state.messagesPage}
+                                                      dispatch={props.dispatch}
+                                                      newMessageText={props.state.messagesPage.newMessageText}/>}/>
           </Routes>
         </div>
       </div>

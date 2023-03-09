@@ -1,5 +1,4 @@
 .img{
-    height: 13rem;
-    padding: 2rem;
-    border-radius: 4rem;
+    height: calc((1vh+1vw)*20);
+    border-radius: 20%;
 }

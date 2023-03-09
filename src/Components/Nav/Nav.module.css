@@ -14,9 +14,11 @@
     text-decoration: none;
     color: white;
     margin-bottom: .7rem;
+    font-size: calc((1vh+1vw)*2);
 }
 .item:hover{
     text-shadow:-1px -1px white;
+    font-size: calc((1vh+1vw)*2);
 }
 
 .active{
@@ -24,4 +26,5 @@
     color: gold;
     text-decoration: none;
     margin-bottom: .7rem;
+    font-size: calc((1vh+1vw)*2);
 }
