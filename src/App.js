@@ -11,7 +11,6 @@ import {Route, Routes} from 'react-router-dom'
 
 const App = (props) => {
 
-
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -19,7 +18,7 @@ const App = (props) => {
         <Nav />
         <div className='content'>
           <Routes>
-            <Route path='/profile/' element={<Profile img="https://img2.freepng.ru/20180628/kxx/kisspng-computer-icons-avatar-operator-5b359bea4195b4.3136422315302399782687.jpg" profilePage={props.state.profilePage}  dispatch={props.dispatch}/>}/>
+            <Route path='/profile/' element={<Profile store={props.store}/>}/>
             <Route path='/dialogs/*' element={<Dialogs  state={props.state.messagesPage}
                                                       dispatch={props.dispatch}
                                                       newMessageText={props.state.messagesPage.newMessageText}/>}/>
