@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Dialogs from './Components/Dialogs/Dialogs';
 import Header from './Components/Header/Header';
 import Nav from './Components/Nav/Nav';
 import Profile from './Components/Profile/Profile';
 import {Route, Routes} from 'react-router-dom'
+import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
 
 
 const App = (props) => {
-
+  debugger
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -18,10 +18,8 @@ const App = (props) => {
         <Nav />
         <div className='content'>
           <Routes>
-            <Route path='/profile/' element={<Profile store={props.store}/>}/>
-            <Route path='/dialogs/*' element={<Dialogs  state={props.state.messagesPage}
-                                                      dispatch={props.dispatch}
-                                                      newMessageText={props.state.messagesPage.newMessageText}/>}/>
+            <Route path='/profile/' element={<Profile />}/>
+            <Route path='/dialogs/*' element={<DialogsContainer />}/>
           </Routes>
         </div>
       </div>
