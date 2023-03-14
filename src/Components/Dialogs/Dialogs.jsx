@@ -17,8 +17,8 @@ const Dialogs = (props) => {
         props.UpdateNewMessageActionCreater(text)
     }
 
-    let dialogElement = props.dialogData.map( d => <Dialog name={d.name} id={d.id} />);
-    let messageElement = props.messageData.map( m => <Message message={m.message} />)
+    let dialogElement = props.dialogData.map( d => <Dialog name={d.name} key={d.id} id={d.id} />);
+    let messageElement = props.messageData.map( m => <Message message={m.message} key={m.id} />)
 
     return(
         <div className={g.dialogs}>
