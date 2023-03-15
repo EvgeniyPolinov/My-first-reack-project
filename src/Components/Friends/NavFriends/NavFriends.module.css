@@ -1,0 +1,45 @@
+.wrapper {
+    padding: .5rem;
+    display: grid;
+    grid-template-areas:
+    "myfriends AllPeople";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vh;
+}
+
+.myfriends{
+    grid-area: myfriends;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc((1vh+1vw)*2);
+    background-color: rgb(132, 132, 132);
+    font-size:  calc((1vh+1vw)*1.7);
+    color: white;
+    transition: .6s;
+}
+.AllPeople{
+    grid-area: AllPeople;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc((1vh+1vw)*2);
+    background-color: rgb(132, 132, 132);
+    font-size:  calc((1vh+1vw)*1.7);
+    color: white;
+    transition: .6s;
+}
+a{
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+.active {
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc((1vh+1vw)*2);
+    font-size:  calc((1vh+1vw)*2.1);
+    transition: .6s;
+}

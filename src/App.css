@@ -5,7 +5,7 @@
   "nav conten";
   grid-template-rows: 10vh minmax(100vh, auto);
   grid-template-columns: 2fr 10fr;
-  grid-gap: 5px;
+  grid-gap: .5vh;
 }
 
 

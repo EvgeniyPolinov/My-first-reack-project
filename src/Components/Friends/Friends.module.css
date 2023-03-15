@@ -1,0 +1,18 @@
+.wrapper {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content";
+    grid-template-rows: 2fr 10fr;
+    grid-gap: 2vh;
+  }
+  
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    grid-area: content;
+    background-color: rgb(193, 193, 194);
+  }
+  
+  
