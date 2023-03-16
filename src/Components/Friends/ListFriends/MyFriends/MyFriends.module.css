@@ -1,0 +1,45 @@
+.photo{
+    padding: 1.5vh;
+    object-fit: cover;
+    width: calc((1vh+1vw)*11);
+    height: calc((1vh+1vw)*13);
+    border-radius: 20%;
+    margin-right: 3vh;
+}
+.wrapperUser{
+    display: flex;
+    margin-bottom: 1vh;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #8a2387, #e94057, #f27121); 
+  }  
+.contentUser{
+    padding: 1.5vh;
+    width: 60vw;
+    height: 12vh;
+    display: flex;
+    position: relative;
+}
+.info{
+    width: 76%;
+    padding: calc((1vh+1vw)*.9);
+    position: relative;
+}
+.followContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc((1vh+1vw)*.9);
+}
+.name{
+    font-size: calc((1vh+1vw)*2);
+    font-weight: bold;
+    letter-spacing: .4vw;
+}
+.status{
+    position: absolute;
+    bottom: 1vh;
+    font-size: calc((1vh+1vw)*1.4);
+    font-weight: bold;
+    letter-spacing: .4vw;
+    font-style: italic
+}

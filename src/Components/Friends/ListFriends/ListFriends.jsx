@@ -2,7 +2,7 @@ import g from './ListFriends.module.css'
 import React from 'react' 
 import { Route, Routes } from 'react-router-dom'
 import MyFriends from './MyFriends/MyFriends'
-import AllPeople from './AllPeople/AllPeople'
+import AllPeopleContainer from './AllPeople/AllPeopleContainer'
 
 
 let ListFriends = () => {
@@ -11,7 +11,7 @@ let ListFriends = () => {
             <Routes>
                 <Route index element={<MyFriends />} />
                 <Route path='/myFriends' element={<MyFriends />}></Route>
-                <Route path='/AllPeople' element={<AllPeople />}></Route>
+                <Route path='/AllPeople' element={<AllPeopleContainer />}></Route>
             </Routes>
         </div>
     )

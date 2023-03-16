@@ -13,10 +13,12 @@
     justify-content: center;
     align-items: center;
     padding: calc((1vh+1vw)*2);
-    background-color: rgb(132, 132, 132);
+    background-color:#8a2387;
     font-size:  calc((1vh+1vw)*1.7);
     color: white;
-    transition: .6s;
+    transition: .3s;
+    border-radius: 1.5vh;
+    letter-spacing: .2vw;
 }
 .AllPeople{
     grid-area: AllPeople;
@@ -24,22 +26,27 @@
     justify-content: center;
     align-items: center;
     padding: calc((1vh+1vw)*2);
-    background-color: rgb(132, 132, 132);
+    background-color: #8a2387;
     font-size:  calc((1vh+1vw)*1.7);
     color: white;
     transition: .6s;
+    border-radius: 1.5vh;
+    letter-spacing: .2vw;
 }
 a{
     text-decoration: none;
     display: block;
     color: black;
+    font-weight: bold
 }
 .active {
-    background-color: rgb(237, 237, 237);
+    background-color:#f27121;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: calc((1vh+1vw)*2);
     font-size:  calc((1vh+1vw)*2.1);
-    transition: .6s;
+    transition: .3s;
+    border-radius: 1.5vh;
+    letter-spacing: .3vw;
 }
