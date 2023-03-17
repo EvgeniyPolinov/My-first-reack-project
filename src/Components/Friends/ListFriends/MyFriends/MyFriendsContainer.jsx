@@ -1,7 +1,7 @@
 
 import { followAC, setUsersAC, unfollowAC } from '../../../../redux/usersReduser'
 import { connect } from 'react-redux'
-import AllPeople from './AllPeople'
+import MyFriends from './MyFriends'
 
 
     let mapStateToProps = (state) => {
@@ -24,6 +24,6 @@ import AllPeople from './AllPeople'
     }    
 
 
-const AllPeopleContainer = connect(mapStateToProps, mapDispatchToProps)(AllPeople)
+const MyFriendsContainer = connect(mapStateToProps, mapDispatchToProps)(MyFriends)
 
-export default AllPeopleContainer;
+export default MyFriendsContainer;
