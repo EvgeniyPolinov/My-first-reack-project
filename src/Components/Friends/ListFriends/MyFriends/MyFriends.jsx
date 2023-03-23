@@ -3,8 +3,9 @@ import React from 'react'
 
 
 let MyFriends = (props) => {
+    
     let Friends = props.users.filter(u => u.followed === true)
-    if (props.users.lenght === 0){
+    if (props.users.length === 0){
         props.setUsers([
             {id: 1, followed: true, fullName: 'Maria', status: 'I love coconut And chocolate', img: 'https://sun9-28.userapi.com/impg/kM9cTZvhkauLMiVBzwVs2J8bEhPQ8jJxA6NADw/9_X7BJga-nQ.jpg?size=564x1003&quality=95&sign=9c4f9863ca50ee4d7c7e4a24e8f6a47c&type=album', location: {city: 'N Novgorod', country: 'Russia'}},
             {id: 2, followed: true, fullName: 'Aslan', status: 'hey brooo', img: 'https://sun9-69.userapi.com/impg/bmAEXv1BZlPuf09uJyaLexmn5UMU4BbndM9ueA/1pl9hykyYFA.jpg?size=1280x1280&quality=96&sign=edee3b64a430bfee45ff35333e68493c&type=album', location: {city: 'Krasnodar', country: 'Russia'}},
@@ -13,7 +14,8 @@ let MyFriends = (props) => {
             {id: 5, followed: false, fullName: 'А этот чел для теста моих друзей', status: 'Я не твой друг челик', img: 'https://avatanplus.com/files/resources/original/5c4f398158bac1689578a153.jpg', location: {city: 'N Novgorod', country: 'Russia'}},
         ]
         )
-    }
+    }   
+
     return(
         <div>
             {Friends.map(u => <div key='u.id'>

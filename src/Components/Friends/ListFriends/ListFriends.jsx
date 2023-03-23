@@ -9,8 +9,8 @@ let ListFriends = () => {
     return (
         <div className={g.wrapper}>
             <Routes>
-                <Route index element={<MyFriendsContainer />} />
-                <Route path='/myFriends' element={<MyFriendsContainer />}></Route>
+                {/* <Route index element={<MyFriendsContainer />} />
+                <Route path='/myFriends' element={<MyFriendsContainer />}></Route> */}
                 <Route path='/AllPeople' element={<AllPeopleContainer />}></Route>
             </Routes>
         </div>
