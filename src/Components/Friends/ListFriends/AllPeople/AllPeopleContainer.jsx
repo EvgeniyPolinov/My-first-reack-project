@@ -1,7 +1,7 @@
 
 import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC } from '../../../../redux/usersReduser'
 import { connect } from 'react-redux'
-import AllPeople from './AllPeople'
+import AllPeopleAPIComponent from './AllPeopleAPIComponent'
 
 
     let mapStateToProps = (state) => {
@@ -33,6 +33,6 @@ import AllPeople from './AllPeople'
     }    
 
 
-const AllPeopleContainer = connect(mapStateToProps, mapDispatchToProps)(AllPeople)
+const AllPeopleContainer = connect(mapStateToProps, mapDispatchToProps)(AllPeopleAPIComponent)
 
 export default AllPeopleContainer;
