@@ -1,5 +1,5 @@
 
-import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC } from '../../../../redux/usersReduser'
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, unfollow } from '../../../../redux/usersReduser'
 import { connect } from 'react-redux'
 import MyFriends from './MyFriends'
 
@@ -12,27 +12,13 @@ import MyFriends from './MyFriends'
             currentPage: state.friendsPage.currentPage
         }
     }
-    let mapDispatchToProps = (dispatch) => {
-        return {
-            follow: (userId) => {
-                dispatch(followAC(userId));
-            },
-            unfollow: (userId) => {
-                dispatch(unfollowAC(userId));
-            },
-            setUsers: (users) => {
-                dispatch(setUsersAC(users));
-            },
-            setCurrentPage: (pageNumber) => {
-                dispatch(setCurrentPageAC(pageNumber))
-            },
-            setTotalUsersCount: (totalCount) => {
-                dispatch(setTotalUsersCountAC(totalCount))
-            },             
-        }
-    }    
+ 
 
-
-const MyFriendsContainer = connect(mapStateToProps, mapDispatchToProps)(MyFriends)
+const MyFriendsContainer = connect(mapStateToProps, {follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,  
+    })(MyFriends)
 
 export default MyFriendsContainer;

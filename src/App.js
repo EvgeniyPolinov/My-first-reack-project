@@ -3,10 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import Nav from './Components/Nav/Nav';
-import Profile from './Components/Profile/Profile';
 import {Route, Routes} from 'react-router-dom'
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
 import Friends from './Components/Friends/Friends';
+import ProfileContainer from './Components/Profile/ProfileContainer';
 
 
 
@@ -18,8 +18,8 @@ const App = (props) => {
         <Nav />
         <div className='content'>
           <Routes>
-            <Route index element={<Profile />} />
-            <Route path='/profile/' element={<Profile />}/>
+            <Route index element={<ProfileContainer />} />
+            <Route path='/profile/*' element={<ProfileContainer />}/>
             <Route path='/dialogs/*' element={<DialogsContainer />}/>
             <Route path='/friends/*' element={<Friends />}/>
           </Routes>

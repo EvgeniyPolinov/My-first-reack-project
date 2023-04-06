@@ -1,5 +1,5 @@
 
-import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC } from '../../../../redux/usersReduser'
+import { follow, setCurrentPage, setFetching, setTotalUsersCount, setUsers, unfollow } from '../../../../redux/usersReduser'
 import { connect } from 'react-redux'
 import AllPeopleAPIComponent from './AllPeopleAPIComponent'
 
@@ -9,30 +9,18 @@ import AllPeopleAPIComponent from './AllPeopleAPIComponent'
             users: state.friendsPage.users,
             totalUsersCount: state.friendsPage.totalUsersCount,
             pageSize: state.friendsPage.pageSize,
-            currentPage: state.friendsPage.currentPage
+            currentPage: state.friendsPage.currentPage,
+            isFetching: state.friendsPage.isFetching,
         }
     }
-    let mapDispatchToProps = (dispatch) => {
-        return {
-            follow: (userId) => {
-                dispatch(followAC(userId));
-            },
-            unfollow: (userId) => {
-                dispatch(unfollowAC(userId));
-            },
-            setUsers: (users) => {
-                dispatch(setUsersAC(users));
-            },  
-            setCurrentPage: (pageNumber) => {
-                dispatch(setCurrentPageAC(pageNumber))
-            },
-            setTotalUsersCount: (totalCount) => {
-                dispatch(setTotalUsersCountAC(totalCount))
-            },      
-        }
-    }    
 
-
-const AllPeopleContainer = connect(mapStateToProps, mapDispatchToProps)(AllPeopleAPIComponent)
+const AllPeopleContainer = connect(mapStateToProps,{
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,  
+    setFetching
+})(AllPeopleAPIComponent)
 
 export default AllPeopleContainer;

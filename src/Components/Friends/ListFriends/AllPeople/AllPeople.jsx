@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import g from './AllPeople.module.css'
 
 
@@ -11,7 +12,9 @@ let AllPeople = (props) => {
         
         { props.users.map(u => <div key={u.id}>
                 <div className={g.wrapperUser}>
-                    <div><img className={g.photo} src={u.photos.small != null ? u.photos.small : 'https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg'}/></div>
+                    <NavLink to={'/profile/' + u.id}>
+                        <img className={g.photo} src={u.photos.small != null ? u.photos.small : 'https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg'}/>
+                    </NavLink>
                     <div className={g.contentUser}>
                         <div className={g.info}>
                             <div className={g.name}>{u.name}</div>
