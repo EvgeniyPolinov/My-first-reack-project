@@ -2,6 +2,7 @@ import g from './Friends.module.css'
 import React from 'react' 
 import ListFriends from './ListFriends/ListFriends';
 import NavFriends from './NavFriends/NavFriends';
+import { withAuthRedirect } from '../../HOC/withAuthRedirect';
 
 
 let Friends = (props) => {
@@ -15,4 +16,4 @@ let Friends = (props) => {
     )
 }
 
-export default Friends;
+export default withAuthRedirect(Friends)
