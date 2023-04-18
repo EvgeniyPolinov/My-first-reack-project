@@ -9,7 +9,8 @@ let mapStateToPops = (state) => {
     return {
         dialogData: state.messagesPage.dialogData,
         messageData: state.messagesPage.messageData,
-        newMessageText: state.messagesPage.newMessageText
+        newMessageText: state.messagesPage.newMessageText,
+        isAuth: state.auth.isAuth
     }
 }
 let mapDisparchToProps = (dispatch) => {

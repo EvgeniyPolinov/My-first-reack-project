@@ -1,19 +1,20 @@
 import { NavLink } from 'react-router-dom'
+import { userAPI } from '../../../../api/api'
 import g from './AllPeople.module.css'
 
 
 let AllPeople = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
         let pages = []
         for (let i=1; i<=10; i++) {
             pages.push(i)
         }
+        debugger
     return <div>  
         
         { props.users.map(u => <div key={u.id}>
                 <div className={g.wrapperUser}>
                     <NavLink to={'/profile/' + u.id}>
-                        <img className={g.photo} src={u.photos.small != null ? u.photos.small : 'https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg'}/>
+                        <img className={g.photo} alt='#' src={u.photos.small != null ? u.photos.small : 'https://rognowsky.ru/wp-content/uploads/2019/09/u55628068.jpg'}/>
                     </NavLink>
                     <div className={g.contentUser}>
                         <div className={g.info}>
@@ -24,8 +25,8 @@ let AllPeople = (props) => {
                         <div className={g.followContainer}>
                             <div>
                                { u.followed
-                                    ? <button onClick={() => { props.unfollow(u.id)}}>Unfollow</button>
-                                    : <button onClick={() => { props.follow(u.id)}}>Follow</button>}
+                                    ? <button disabled={props.followingInPrograss.some(id => id === u.id)} onClick={() => {props.unfollowThunk(u.id)}}>Unfollow</button>
+                                    : <button  disabled={props.followingInPrograss.some(id => id === u.id)} onClick={() => {props.followThunk(u.id)}}>Follow</button>}
                             </div> 
                         </div>
                     </div>

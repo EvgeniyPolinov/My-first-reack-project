@@ -5,5 +5,10 @@
 
 .img{
     height: calc((1vh+1vw)*10);
+    float: left;
     margin-left: 5px;
+}
+.loginBlock{
+    float: right;
+    transform: translateY(2rem) translateX(-2rem);
 }

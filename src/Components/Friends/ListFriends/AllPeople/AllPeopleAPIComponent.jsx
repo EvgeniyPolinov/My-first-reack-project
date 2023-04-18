@@ -1,7 +1,7 @@
 import React from 'react'
-import axios from 'axios';
 import AllPeople from './AllPeople';
 import preloader from './../../../../img/preloder3.svg'
+import { userAPI } from '../../../../api/api';
 
 
 class AllPeopleAPIComponent extends React.Component{
@@ -9,22 +9,11 @@ class AllPeopleAPIComponent extends React.Component{
         super(props);
     }
     componentDidMount() {
-        this.props.setFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setFetching(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersCount(response.data.totalCount)
-            });
+        
+       this.props.getUsers()
     }
     onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber);
-        this.props.setFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-                this.props.setFetching(false)
-            });
+        this.props.getUsers(pageNumber, this.props.pageSize)
     }
     render() {
         return  <>
@@ -36,6 +25,10 @@ class AllPeopleAPIComponent extends React.Component{
                             users={this.props.users}
                             follow={this.props.follow}
                             unfollow={this.props.unfollow}
+                            toggleInPrograss={this.props.toggleInPrograss}
+                            followingInPrograss={this.props.followingInPrograss}
+                            followThunk={this.props.followThunk}
+                            unfollowThunk={this.props.unfollowThunk}
                             />
         </>
     }

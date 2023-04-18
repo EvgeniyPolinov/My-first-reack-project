@@ -1,5 +1,5 @@
 
-import { follow, setCurrentPage, setFetching, setTotalUsersCount, setUsers, unfollow } from '../../../../redux/usersReduser'
+import { follow, setCurrentPage, setFetching, setTotalUsersCount, setUsers, unfollow, toggleInPrograss, getUsers, followThunk, unfollowThunk } from '../../../../redux/usersReduser'
 import { connect } from 'react-redux'
 import AllPeopleAPIComponent from './AllPeopleAPIComponent'
 
@@ -11,6 +11,7 @@ import AllPeopleAPIComponent from './AllPeopleAPIComponent'
             pageSize: state.friendsPage.pageSize,
             currentPage: state.friendsPage.currentPage,
             isFetching: state.friendsPage.isFetching,
+            followingInPrograss: state.friendsPage.followingInPrograss
         }
     }
 
@@ -20,7 +21,11 @@ const AllPeopleContainer = connect(mapStateToProps,{
     setUsers,
     setCurrentPage,
     setTotalUsersCount,  
-    setFetching
+    setFetching,
+    toggleInPrograss,
+    getUsers,
+    followThunk,
+    unfollowThunk
 })(AllPeopleAPIComponent)
 
 export default AllPeopleContainer;
